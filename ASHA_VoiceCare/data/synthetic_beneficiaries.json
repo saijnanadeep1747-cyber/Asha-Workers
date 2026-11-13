@@ -1,0 +1,14 @@
+[
+  {
+    "beneficiary_id": "SYN-1001",
+    "name": "Synthetic Person A",
+    "household_id": "HH-001",
+    "village": "Demo Village"
+  },
+  {
+    "beneficiary_id": "SYN-1002",
+    "name": "Synthetic Person B",
+    "household_id": "HH-002",
+    "village": "Demo Village"
+  }
+]

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASHA VoiceCare</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">✚ ASHA <span>VoiceCare</span></div>
+  <p>Speak. Confirm. Save. Follow up.</p>
+</header>
+<main>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">VOICE FIELD REGISTER</p>
+      <h1>Spend more time with families, less time typing.</h1>
+      <p>Speak a visit note, review the extracted fields, correct by voice, then confirm before saving.</p>
+    </div>
+    <div class="status" id="apiStatus">Checking backend…</div>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div><p class="eyebrow">STEP 1</p><h2>Capture visit note</h2></div>
+      <span class="tag">Voice first</span>
+    </div>
+    <label for="language">Speech language</label>
+    <select id="language">
+      <option value="kn-IN">Kannada</option>
+      <option value="hi-IN">Hindi</option>
+      <option value="en-IN" selected>English (India)</option>
+      <option value="ta-IN">Tamil</option>
+      <option value="te-IN">Telugu</option>
+      <option value="ml-IN">Malayalam</option>
+      <option value="mr-IN">Marathi</option>
+      <option value="bn-IN">Bengali</option>
+    </select>
+    <div class="voice-controls">
+      <button id="startBtn" class="primary">🎙 Start speaking</button>
+      <button id="stopBtn" class="secondary" disabled>Stop</button>
+      <span id="micStatus" aria-live="polite">Microphone not started</span>
+    </div>
+    <label for="note">Recognised / typed note</label>
+    <textarea id="note" rows="5" placeholder="Example: Beneficiary ID 102, ANC checkup today, weight 52 kilo, TT injection completed, next visit 05/12/2026."></textarea>
+    <div class="hint">Enhanced capture uses microphone echo cancellation, noise suppression and automatic gain control. On Stop, the app tries cloud transcription, then the optional offline Kannada model, then browser speech as a fallback. Review the transcript carefully before extracting or saving.</div>
+    <button id="extractBtn" class="primary">Extract visit details</button>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div><p class="eyebrow">STEP 2</p><h2>Review and correct</h2></div>
+      <span class="tag">Required before saving</span>
+    </div>
+    <div id="dangerBox" class="danger hidden" role="alert"></div>
+    <div class="fields">
+      <label>Beneficiary ID<input id="beneficiary_id" placeholder="Required"></label>
+      <label>Visit type<select id="visit_type"><option value="">Not identified</option><option>ANC</option><option>PNC</option><option>Newborn</option><option>Immunisation</option></select></label>
+      <label>Weight (kg)<input id="weight_kg" type="number" step="0.1" min="0" placeholder="Not identified"></label>
+      <label>Vaccination status<input id="vaccination_status" placeholder="Not specified"></label>
+      <label>Vaccinations / items mentioned<input id="vaccinations_due" placeholder="Not specified"></label>
+      <label>Next visit date<input id="next_visit_date" type="date"></label>
+    </div>
+    <div class="voice-controls">
+      <button id="readBtn" class="secondary">🔊 Read form aloud</button>
+      <button id="correctionBtn" class="secondary">🎙 Correct by voice</button>
+    </div>
+    <p class="hint">Example correction: “No, weight is 2.8 kilo” or “beneficiary ID is 105”. Check every field. Missing values are not guessed.</p>
+    <label class="check"><input type="checkbox" id="confirmed"> I listened to the read-back and confirm these details are correct.</label>
+    <button id="saveBtn" class="primary" disabled>Confirm and save visit</button>
+    <p id="saveStatus" aria-live="polite"></p>
+  </section>
+
+  <section class="panel">
+    <div class="section-title"><div><p class="eyebrow">STEP 3</p><h2>Follow-up list</h2></div><button id="refreshBtn" class="small">Refresh</button></div>
+    <div id="followups" class="empty">No follow-ups loaded yet.</div>
+  </section>
+</main>
+<footer>Prototype only • Synthetic beneficiaries • Not a diagnostic or treatment tool</footer>
+<script src="app.js"></script>
+</body>
+</html>

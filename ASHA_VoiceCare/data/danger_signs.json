@@ -1,0 +1,27 @@
+[
+  {
+    "id": "PREG_BLEEDING",
+    "label": "Bleeding during pregnancy",
+    "phrases": [
+      "bleeding during pregnancy",
+      "pregnancy bleeding",
+      "bleeding while pregnant",
+      "गर्भावस्था में रक्तस्राव",
+      "ಗರ್ಭಾವಸ್ಥೆಯಲ್ಲಿ ರಕ್ತಸ್ರಾವ"
+    ],
+    "referral_message": "Please refer the pregnant woman to the nearest PHC now, following your local referral protocol."
+  },
+  {
+    "id": "NEWBORN_HIGH_FEVER",
+    "label": "High fever in a newborn",
+    "phrases": [
+      "newborn has high fever",
+      "high fever in newborn",
+      "newborn fever",
+      "baby has high fever",
+      "नवजात को तेज बुखार",
+      "ನವಜಾತ ಶಿಶುವಿಗೆ ಹೆಚ್ಚಿನ ಜ್ವರ"
+    ],
+    "referral_message": "Please refer the newborn to the nearest PHC now, following your local referral protocol."
+  }
+]
